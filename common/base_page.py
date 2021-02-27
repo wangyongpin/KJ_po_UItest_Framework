@@ -60,3 +60,51 @@ class BasePage:
         element = self.find_element(element_info)
         element.send_keys(content)
         logger.info('[%s]元素输入内容%s' % (element_info['element_name'],content))
+
+# selenium 执行js
+    '''
+    def __execute_script(self,js_string,element_info=None):
+        if element_info:
+            self.driver.execute_script(js_string)
+        else:
+            self.driver.execute_script(js_string,None)
+    def  remover_element_attribute(self,element_info,attribute_name):
+        # 移除属性
+        element = self.find_element(element_info)
+        self.__execute_script('arguments[0].removeAttribute("%s");'%attribute_name,element)
+    def  update_element_attribute(self,element_info,attribute_name,attribute_value):
+        # 修改属性
+        element = self.find_element(element_info)
+        self.__execute_script('arguments[0].setAttribute("%s","%s");'%(attribute_name,attribute_value),element)
+    '''
+
+    def  remover_element_attribute(self,element_info,attribute_name):
+        # 移除属性
+        element = self.find_element(element_info)
+        self.driver.execute_script('arguments[0].removeAttribute("%s");'%attribute_name,element)
+    def  update_element_attribute(self,element_info,attribute_name,attribute_value):
+        # 修改属性
+        element = self.find_element(element_info)
+        self.driver.execute_script('arguments[0].setAttribute("%s","%s");'%(attribute_name,attribute_value),element)
+
+    # frame ==> ID 和 NAME
+    # 思路一
+    def switch_to_frame(self,element_info):
+        element = self.find_element(element_info)
+        self.driver.switch_to.frame(element)
+    # 思路二
+    def switch_to_frame_id_or_name(self,id_or_name):
+        self.driver.switch_to.frame(id_or_name)
+    def switch_to_frame_by_element(self,element_info):
+        element = self.find_element(element_info)
+        self.driver.switch_to.frame(element)
+    # 思路三
+    def switch_to_frame1(self, **element_dict):
+        if  'id' in element_dict.keys():
+            self.driver.switch_to.frame(element_dict['id'])
+        elif  'name' in element_dict.keys():
+            self.driver.switch_to.frame(element_dict['name'])
+        elif 'element' in element_dict.keys():
+            element = self.find_element(element_dict['element'])
+            self.driver.switch_to.frame(element)
+
