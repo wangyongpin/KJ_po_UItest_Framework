@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from common.log_utlis import logger
 from common.base_page import BasePage
+from common.browser import Browser
 
 class LogionPage(BasePage):
     def __init__(self,driver):
@@ -40,9 +41,12 @@ class LogionPage(BasePage):
         self.click(self.login_checkbox)
 
 if __name__ == '__main__':
-    curren_path = os.path.dirname(__file__)
-    driver_path = os.path.join(curren_path, '../webdrver/chromedriver.exe')
-    driver = webdriver.Chrome(executable_path=driver_path)
+    # curren_path = os.path.dirname(__file__)
+    # driver_path = os.path.join(curren_path, '../webdrver/chromedriver.exe')
+    # driver = webdriver.Chrome(executable_path=driver_path)
+    # driver = Browser().get_charmo_driver()
+    driver = Browser().get_driver()
+
     login = LogionPage(driver)
     login.oper_url('http://127.0.0.1:81/index.php')
     login.clcik_kaiyuan()

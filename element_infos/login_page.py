@@ -17,8 +17,6 @@ class LogionPage:
         self.password_inputbox = self.driver.find_element(By.NAME, 'password')
         self.login_checkbox= self.driver.find_element(By.ID, 'submit')
 
-
-
     # 方法--》控件的操作
     def input_name(self,username):
         self.user_name_inputbox.send_keys(username)

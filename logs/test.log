@@ -33,3 +33,43 @@
 2021-02-27 13:51:30,617 - log_utlis.py[line:16] - INFO: [登陆按钮]元素识别成功
 2021-02-27 13:51:30,686 - log_utlis.py[line:16] - INFO: [登陆按钮]元素进行了点击
 2021-02-27 13:51:30,686 - log_utlis.py[line:16] - INFO: 运行了
+2021-02-27 16:33:23,677 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-02-27 16:33:23,873 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-02-27 16:33:44,054 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-02-27 16:33:44,072 - log_utlis.py[line:16] - INFO: [用户名输入]元素识别成功
+2021-02-27 16:33:44,124 - log_utlis.py[line:16] - INFO: [用户名输入]元素输入内容admin
+2021-02-27 16:33:44,143 - log_utlis.py[line:16] - INFO: [用户名密码]元素识别成功
+2021-02-27 16:33:44,231 - log_utlis.py[line:16] - INFO: [用户名密码]元素输入内容Wyp123456
+2021-02-27 16:33:44,251 - log_utlis.py[line:16] - INFO: [登录按钮]元素识别成功
+2021-02-27 16:33:44,309 - log_utlis.py[line:16] - INFO: [登录按钮]元素进行了点击
+2021-02-27 16:33:44,309 - log_utlis.py[line:16] - INFO: 运行了
+2021-02-27 16:54:39,124 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-02-27 16:54:39,181 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-02-27 16:54:40,463 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-02-27 16:54:40,492 - log_utlis.py[line:16] - INFO: [用户名输入]元素识别成功
+2021-02-27 16:54:40,539 - log_utlis.py[line:16] - INFO: [用户名输入]元素输入内容admin
+2021-02-27 16:54:40,554 - log_utlis.py[line:16] - INFO: [用户名密码]元素识别成功
+2021-02-27 16:54:40,636 - log_utlis.py[line:16] - INFO: [用户名密码]元素输入内容Wyp123456
+2021-02-27 16:54:40,655 - log_utlis.py[line:16] - INFO: [登录按钮]元素识别成功
+2021-02-27 16:54:40,714 - log_utlis.py[line:16] - INFO: [登录按钮]元素进行了点击
+2021-02-27 16:54:40,714 - log_utlis.py[line:16] - INFO: 运行了
+2021-02-27 16:57:09,095 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-02-27 16:57:09,115 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-02-27 16:57:12,994 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-02-27 16:57:13,047 - log_utlis.py[line:16] - INFO: [用户名输入]元素识别成功
+2021-02-27 16:57:13,099 - log_utlis.py[line:16] - INFO: [用户名输入]元素输入内容admin
+2021-02-27 16:57:13,115 - log_utlis.py[line:16] - INFO: [用户名密码]元素识别成功
+2021-02-27 16:57:13,212 - log_utlis.py[line:16] - INFO: [用户名密码]元素输入内容Wyp123456
+2021-02-27 16:57:13,232 - log_utlis.py[line:16] - INFO: [登录按钮]元素识别成功
+2021-02-27 16:57:13,298 - log_utlis.py[line:16] - INFO: [登录按钮]元素进行了点击
+2021-02-27 16:57:13,298 - log_utlis.py[line:16] - INFO: 运行了
+2021-02-27 16:59:54,057 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-02-27 16:59:54,097 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-02-27 16:59:55,194 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-02-27 16:59:55,221 - log_utlis.py[line:16] - INFO: [用户名输入]元素识别成功
+2021-02-27 16:59:55,256 - log_utlis.py[line:16] - INFO: [用户名输入]元素输入内容admin
+2021-02-27 16:59:55,270 - log_utlis.py[line:16] - INFO: [用户名密码]元素识别成功
+2021-02-27 16:59:55,329 - log_utlis.py[line:16] - INFO: [用户名密码]元素输入内容Wyp123456
+2021-02-27 16:59:55,344 - log_utlis.py[line:16] - INFO: [登录按钮]元素识别成功
+2021-02-27 16:59:55,384 - log_utlis.py[line:16] - INFO: [登录按钮]元素进行了点击
+2021-02-27 16:59:55,385 - log_utlis.py[line:16] - INFO: 运行了
