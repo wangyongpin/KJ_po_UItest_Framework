@@ -3,10 +3,11 @@ import os,time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from common.log_utlis import logger
+from common.config_utils import local_config
 
 class BasePage:
     def __init__(self,driver):
-        self.driver = driver # driver
+        self.driver =  webdriver.Chrome() #driver  driver
 
     # 浏览器操作的封装--->二次封装
     def oper_url(self,url):
@@ -20,6 +21,9 @@ class BasePage:
     def set_browser_min(self):
         self.driver.minimize_window()
         logger.info('设置浏览器最小化')
+
+    def implicitly_wait(self,seconds=local_config.time_out):
+        self.driver.implicitly_wait(seconds)
 
     def refrseh(self):
         self.driver.refresh()
@@ -46,6 +50,8 @@ class BasePage:
             locator_type = By.CLASS_NAME
         elif locator_type_name == 'xpath':
             locator_type = By.XPATH
+            # 显示等待封装
+
         element = WebDriverWait(self.driver,locator_timeout) \
             .until(lambda x:x.find_element(locator_type,locator_value_info))
         logger.info('[%s]元素识别成功' %element_info['element_name'])
@@ -100,6 +106,7 @@ class BasePage:
         self.driver.switch_to.frame(element)
     # 思路三
     def switch_to_frame1(self, **element_dict):
+        self.wait()
         if  'id' in element_dict.keys():
             self.driver.switch_to.frame(element_dict['id'])
         elif  'name' in element_dict.keys():
@@ -107,4 +114,11 @@ class BasePage:
         elif 'element' in element_dict.keys():
             element = self.find_element(element_dict['element'])
             self.driver.switch_to.frame(element)
+
+
+    # 等待
+    def wait(self,seconds=local_config.time_out):
+        time.sleep(seconds)
+
+    # 等待默认值
 

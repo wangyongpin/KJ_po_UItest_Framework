@@ -8,8 +8,8 @@ from common.element_data_utils import ElementdataUtils
 class LogionPage(BasePage):
     def __init__(self,driver):
         super().__init__(driver)
-        # 调用ElementdataUtils 类，使用excel元素信息
-        elements = ElementdataUtils('login','login_page').get_element_info()
+        # 调用ElementdataUtils 类，使用excel元素信息  页面 login + 模块login_page
+        elements = ElementdataUtils('login').get_element_info('login_page')
         self.kaiyuan_click = elements['kaiyuan_click']
         self.username_inputbox = elements['username_inputbox']
         self.password_inputbox = elements['password_inputbox']

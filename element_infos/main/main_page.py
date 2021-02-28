@@ -1,7 +1,5 @@
-from selenium import webdriver
-import os,time
 from selenium.webdriver.common.by import By
-from element_infos.login_page import LogionPage # 导入登录包
+from element_infos.login.login_page import LogionPage # 导入登录包
 from common.log_utlis import logger
 
 class main_Project_Test:

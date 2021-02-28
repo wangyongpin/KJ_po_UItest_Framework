@@ -24,6 +24,11 @@ class ConfingUtils:
         driver_name_value = self.cfg.get('default', 'driver_name')
         return driver_name_value
 
+    @property
+    def time_out(self):
+        time_out_value = float(self.cfg.get('default', 'time_out'))
+        return time_out_value
+
 
 local_config = ConfingUtils()
 if __name__ == '__main__':
@@ -31,4 +36,5 @@ if __name__ == '__main__':
     print(config.url)
     print(config.driver_path)
     print(config.driver_name)
+    print(type(config.time_out))
 

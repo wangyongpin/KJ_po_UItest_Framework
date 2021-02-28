@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from common.log_utlis import logger
 curren_path = os.path.dirname(__file__)
-driver_path = os.path.join(curren_path,'../webdrver/chromedriver.exe')
+driver_path = os.path.join(curren_path, '../../webdrver/chromedriver.exe')
 class LogionPage:
     def __init__(self):
         self.driver = webdriver.Chrome(executable_path=driver_path)
