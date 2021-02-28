@@ -17,9 +17,9 @@ class LoginTest(unittest.TestCase):
     def test_login_success(self):
         login_action = loginAction(self.base_page.driver)
         main_page = login_action.login_success('admin','Wyp123456')
-        # actual_result = main_page.get_username()
+        actual_result = main_page.get_username()
         # print(actual_result)
-        self.assertEqual(main_page.get_username(),'admin','test_login_success登陆失败！')
+        self.assertEqual(actual_result,'admin','test_login_success登陆失败！')
 
 if __name__ == '__main__':
     unittest.main()

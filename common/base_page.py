@@ -81,6 +81,12 @@ class BasePage:
         element.send_keys(content)
         logger.info('[%s]元素输入内容%s' % (element_info['element_name'],content))
 
+    def get_text(self,element_info):
+        element = self.find_element(element_info)
+        return element.text
+
+
+
     # 鼠标键盘封装（建议代码思路，判断操作系统）
     def move_to_element_by_mouse(self,element_info): # 移动到指定位置
         element = self.find_element(element_info)
