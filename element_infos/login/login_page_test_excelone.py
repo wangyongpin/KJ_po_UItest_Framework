@@ -30,6 +30,9 @@ class LogionPage(BasePage):
     def click_login(self):
         self.click(self.login_button)
 
+    def get_login_fail_alert_content(self):
+        return self.switch_to_alert()
+
 if __name__ == '__main__':
     # curren_path = os.path.dirname(__file__)
     # driver_path = os.path.join(curren_path, '../webdrver/chromedriver.exe')

@@ -28,6 +28,14 @@ class BasePage:
         self.driver.minimize_window()
         logger.info('设置浏览器最小化')
 
+    def close_tab(self):
+        self.driver.close()
+        logger.info('关闭当前TAB页签')
+
+    def exit_browser(self):
+        self.driver.quit()
+        logger.info('退出浏览器')
+
     def implicitly_wait(self,seconds=local_config.time_out):
         self.driver.implicitly_wait(seconds)
 
@@ -174,7 +182,7 @@ class BasePage:
         now = time.strftime('%Y_%m_%d_%H_%M_%S')
         screenshot_filepath = os.path.join(current_dir,'..',screenshot_filepath,'UITest.%s.png' %now)
         self.driver.get_screenshot_as_file(screenshot_filepath)
-        print(screenshot_filepath)
+
 
     # 等待
     def wait(self,seconds=local_config.time_out):

@@ -34,6 +34,16 @@ class ConfingUtils:
         screen_shot_path_value = self.cfg.get('default', 'screen_shot_path')
         return screen_shot_path_value
 
+    @property
+    def user_name(self):
+        user_name_value = self.cfg.get('default', 'user_name')
+        return user_name_value
+
+    @property
+    def password(self):
+        password_value = self.cfg.get('default', 'password')
+        return password_value
+
 local_config = ConfingUtils()
 if __name__ == '__main__':
     config = ConfingUtils()
@@ -41,4 +51,6 @@ if __name__ == '__main__':
     print(config.driver_path)
     print(config.driver_name)
     print(type(config.time_out))
+    print(config.user_name)
+    print(config.password)
 
