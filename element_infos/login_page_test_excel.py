@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from common.log_utlis import logger
 from common.base_page import BasePage
 from common.element_data_utils import ElementdataUtils
+from common.browser import Browser
 
 class LogionPage(BasePage):
     def __init__(self,driver):
@@ -30,9 +31,18 @@ class LogionPage(BasePage):
         self.click(self.login_button)
 
 if __name__ == '__main__':
-    curren_path = os.path.dirname(__file__)
-    driver_path = os.path.join(curren_path, '../webdrver/chromedriver.exe')
-    driver = webdriver.Chrome(executable_path=driver_path)
+    # curren_path = os.path.dirname(__file__)
+    # driver_path = os.path.join(curren_path, '../webdrver/chromedriver.exe')
+    # driver = webdriver.Chrome(executable_path=driver_path)
+    # login = LogionPage(driver)
+    # login.oper_url('http://127.0.0.1:81/index.php')
+    # login.clcik_kaiyuan()
+    # login.input_name('admin')
+    # login.input_password('Wyp123456')
+    # login.click_login()
+    # print('运行成功')
+    # logger.info('运行了')
+    driver = Browser().get_driver()
     login = LogionPage(driver)
     login.oper_url('http://127.0.0.1:81/index.php')
     login.clcik_kaiyuan()
@@ -40,4 +50,6 @@ if __name__ == '__main__':
     login.input_password('Wyp123456')
     login.click_login()
     print('运行成功')
+    login.screensshot_as_file()
+
     logger.info('运行了')

@@ -12,7 +12,7 @@ from common.config_utils import local_config
 
 class BasePage:
     def __init__(self,driver):
-        self.driver =  webdriver.Chrome() #driver  driver
+        self.driver = driver  #driver
         # self.chains = ActionChains(self.driver) # 鼠标默认，下面封装会使用---不推荐受使用，鼠标操作太少
 
     # 浏览器操作的封装--->二次封装
@@ -166,14 +166,15 @@ class BasePage:
 # 截图
 
     def screensshot_as_file(self,*screenshot_path):
+        current_dir = os.path.dirname(__file__)
         if len(screenshot_path) == 0:
             screenshot_filepath = local_config.screen_shot_path
         else:
             screenshot_filepath = screenshot_path[0]
         now = time.strftime('%Y_%m_%d_%H_%M_%S')
-        current_dir = os.path.abspath(os.path.dirname(__file__))
-        screenshot_filepath = os.path.join(current_dir,screenshot_filepath,'UITest.%s.png' %now)
-        self.__driver.get_screenshot_as_file(screenshot_filepath)
+        screenshot_filepath = os.path.join(current_dir,'..',screenshot_filepath,'UITest.%s.png' %now)
+        self.driver.get_screenshot_as_file(screenshot_filepath)
+        print(screenshot_filepath)
 
     # 等待
     def wait(self,seconds=local_config.time_out):
