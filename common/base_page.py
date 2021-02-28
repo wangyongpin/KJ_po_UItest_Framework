@@ -1,6 +1,11 @@
+from lib2to3.pgen2 import driver
+from telnetlib import EC
+
 from selenium import webdriver
 import os,time
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from common.log_utlis import logger
 from common.config_utils import local_config
@@ -8,6 +13,7 @@ from common.config_utils import local_config
 class BasePage:
     def __init__(self,driver):
         self.driver =  webdriver.Chrome() #driver  driver
+        # self.chains = ActionChains(self.driver) # 鼠标默认，下面封装会使用---不推荐受使用，鼠标操作太少
 
     # 浏览器操作的封装--->二次封装
     def oper_url(self,url):
@@ -67,6 +73,19 @@ class BasePage:
         element.send_keys(content)
         logger.info('[%s]元素输入内容%s' % (element_info['element_name'],content))
 
+    # 鼠标键盘封装（建议代码思路，判断操作系统）
+    def move_to_element_by_mouse(self,element_info): # 移动到指定位置
+        element = self.find_element(element_info)
+        ActionChains(self.driver).move_to_element(element).perform()
+
+    def long_press_element(self,element_info,senconds): # 长按并且释放
+        element = self.find_element(element_info)
+        ActionChains(self.driver).click_and_hold(element).pause(senconds).release(element)
+
+
+
+
+
 # selenium 执行js
     '''
     def __execute_script(self,js_string,element_info=None):
@@ -114,7 +133,47 @@ class BasePage:
         elif 'element' in element_dict.keys():
             element = self.find_element(element_dict['element'])
             self.driver.switch_to.frame(element)
+# 弹窗狂封装
+    def switch_to_alert(self,action='accept',time_out=local_config.time_out):
+        self.wait(time_out)
+        alter = self.driver.switch_to.alert()
+        alter_text = alter.text
+        if action == 'accept':
+            alter.accept()
+        elif action == 'dismiss':
+            alter.dismiss()
+        return alter_text
 
+# windows句柄封装
+
+    def get_windw_handls(self):
+        return self.driver.current_window_handle
+    def switck_to_window_byhandle(self,window_handle):
+        self.driver.switch_to.window(window_handle)
+    def switck_to_window_by_title(self,title): # 根据title判断
+        window_handles = self.driver.window_handles
+        for window_handle in window_handles:
+            if WebDriverWait(driver,local_config.time_out).until(EC.title_contais(title)):
+                self.driver.switch_to.window(window_handle)
+                break
+    def switck_to_window_by_url(self,url): # 根据url判断
+        window_handles = self.driver.window_handles
+        for window_handle in window_handles:
+            if WebDriverWait(driver,local_config.time_out).until(EC.url_contais(url)):
+                self.driver.switch_to.window(window_handle)
+                break
+
+# 截图
+
+    def screensshot_as_file(self,*screenshot_path):
+        if len(screenshot_path) == 0:
+            screenshot_filepath = local_config.screen_shot_path
+        else:
+            screenshot_filepath = screenshot_path[0]
+        now = time.strftime('%Y_%m_%d_%H_%M_%S')
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+        screenshot_filepath = os.path.join(current_dir,screenshot_filepath,'UITest.%s.png' %now)
+        self.__driver.get_screenshot_as_file(screenshot_filepath)
 
     # 等待
     def wait(self,seconds=local_config.time_out):

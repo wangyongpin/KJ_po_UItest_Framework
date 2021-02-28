@@ -29,6 +29,10 @@ class ConfingUtils:
         time_out_value = float(self.cfg.get('default', 'time_out'))
         return time_out_value
 
+    @property
+    def screen_shot_path(self):
+        screen_shot_path_value = self.cfg.get('default', 'screen_shot_path')
+        return screen_shot_path_value
 
 local_config = ConfingUtils()
 if __name__ == '__main__':
