@@ -20,6 +20,11 @@ class LoginTest(unittest.TestCase):
         actual_result = main_page.get_username()
         # print(actual_result)
         self.assertEqual(actual_result,'admin','test_login_success登陆失败！')
+    def test_login_fail(self):
+        login_action = loginAction(self.base_page.driver)
+        actual_result = login_action.login_fail('admin','Wyp1234526') # 密码错误
+        print('actualt%s'%actual_result)
+        self.assertEqual(actual_result,'登录失败，请检查您的用户名或密码是否填写正确。')
 
 if __name__ == '__main__':
     unittest.main()

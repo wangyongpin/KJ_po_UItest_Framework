@@ -14,6 +14,7 @@ class main_Project_Test(BasePage):
         elements = ElementdataUtils('main','main_page').get_element_info()
         self.myzone_link = elements['myzone_link']
         self.user_menu = elements['user_menu']
+        self.quit_button = elements['quit_button']
 
     def  goto_myzone(self): # 进入我的地盘菜单
         self.click(self.myzone_link)
@@ -21,6 +22,13 @@ class main_Project_Test(BasePage):
     def get_username(self):
         value = self.get_text(self.user_menu)
         return value
+
+    def click_username(self):
+        self.click(self.user_menu)
+
+    def click_quit_button(self):
+        self.click(self.quit_button)
+
 if __name__ == '__main__':
     driver = Browser().get_driver()
     # driver.get('http://127.0.0.1:81/index.php')

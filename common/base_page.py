@@ -150,7 +150,7 @@ class BasePage:
 # 弹窗狂封装
     def switch_to_alert(self,action='accept',time_out=local_config.time_out):
         self.wait(time_out)
-        alter = self.driver.switch_to.alert()
+        alter = self.driver.switch_to.alert
         alter_text = alter.text
         if action == 'accept':
             alter.accept()
