@@ -23,10 +23,10 @@ class main_Project_Test(BasePage):
         value = self.get_text(self.user_menu)
         return value
 
-    def click_username(self):
+    def click_username(self): # 点击用户名
         self.click(self.user_menu)
 
-    def click_quit_button(self):
+    def click_quit_button(self):# 点击退出
         self.click(self.quit_button)
 
 if __name__ == '__main__':

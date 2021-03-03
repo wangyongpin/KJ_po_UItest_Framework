@@ -222,3 +222,26 @@
 2021-03-01 19:46:20,540 - log_utlis.py[line:16] - INFO: [退出按钮]元素进行了点击
 2021-03-01 19:46:20,600 - log_utlis.py[line:16] - INFO: 获取网页的title 用户登录 - 禅道
 2021-03-01 19:46:22,658 - log_utlis.py[line:16] - INFO: 关闭当前TAB页签
+2021-03-01 21:35:27,806 - log_utlis.py[line:16] - INFO: 设置浏览器最大化
+2021-03-01 21:35:35,876 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-03-01 21:35:42,508 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-03-01 21:38:03,675 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-03-01 21:38:03,699 - log_utlis.py[line:16] - INFO: [用户输入框]元素识别成功
+2021-03-01 21:38:03,825 - log_utlis.py[line:16] - INFO: [用户输入框]元素输入内容admin
+2021-03-01 21:38:03,838 - log_utlis.py[line:16] - INFO: [密码输入框]元素识别成功
+2021-03-01 21:38:03,959 - log_utlis.py[line:16] - INFO: [密码输入框]元素输入内容Wyp1234526
+2021-03-01 21:38:03,981 - log_utlis.py[line:16] - INFO: [登陆按钮]元素识别成功
+2021-03-01 21:38:04,040 - log_utlis.py[line:16] - INFO: [登陆按钮]元素进行了点击
+2021-03-01 21:38:09,246 - log_utlis.py[line:16] - INFO: 关闭当前TAB页签
+2021-03-01 21:38:13,777 - log_utlis.py[line:16] - INFO: 设置浏览器最大化
+2021-03-01 21:38:15,239 - log_utlis.py[line:16] - INFO: 打开URL地址 http://127.0.0.1:81/index.php
+2021-03-01 21:38:15,279 - log_utlis.py[line:16] - INFO: [点击开原版]元素识别成功
+2021-03-01 21:40:16,893 - log_utlis.py[line:16] - INFO: [点击开原版]元素进行了点击
+2021-03-01 21:40:16,916 - log_utlis.py[line:16] - INFO: [用户输入框]元素识别成功
+2021-03-01 21:40:17,086 - log_utlis.py[line:16] - INFO: [用户输入框]元素输入内容admin
+2021-03-01 21:40:17,111 - log_utlis.py[line:16] - INFO: [密码输入框]元素识别成功
+2021-03-01 21:40:17,187 - log_utlis.py[line:16] - INFO: [密码输入框]元素输入内容Wyp123456
+2021-03-01 21:40:17,208 - log_utlis.py[line:16] - INFO: [登陆按钮]元素识别成功
+2021-03-01 21:40:17,261 - log_utlis.py[line:16] - INFO: [登陆按钮]元素进行了点击
+2021-03-01 21:40:20,633 - log_utlis.py[line:16] - INFO: [用户菜单]元素识别成功
+2021-03-01 21:40:20,943 - log_utlis.py[line:16] - INFO: 关闭当前TAB页签
